@@ -1,0 +1,179 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #e0f2f1; 
+    color: #333;
+    box-sizing: border-box;
+}
+
+.left-panel {
+    width: 25%;
+    background:  #06205D;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-panel img {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 10px;
+    border: 3px solid #fff;
+}
+
+.left-panel h1 {
+    font-size: 1.8em;
+    margin: 10px 0;
+}
+
+.left-panel p {
+    font-size: 0.9em;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.left-panel nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.left-panel nav ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.left-panel nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+}
+
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #06205D; 
+}
+
+header h2 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: 300;
+    color: #4b8a99; 
+}
+
+h3 {
+    text-align: center;
+    }
+
+.section {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
+}
+
+.technologies img {
+    max-width: 80px; 
+    height: auto;
+    display: inline-block;
+}
+
+
+
+.tech-icon:hover {
+    transform: scale(1.1); 
+    }
+
+
+#portfolio .project {
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#portfolio .project:hover {
+    transform: scale(1.05);
+    background-color: #e0f2f1; 
+}
+
+.contact-details {
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+.contact-item {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 1.1em;
+}
+
+.contact-item i {
+color: #06205D; 
+font-size: 1.2em;
+}
+
+.social-links {
+display: flex;
+gap: 20px;
+justify-content: center;
+}
+
+.social-links a {
+text-decoration: none;
+color: #06205D; 
+font-size: 1.2em;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+color: #0a53be; 
+}
+
+.social-links i {
+font-size: 1.5em;
+}
+
