@@ -51,7 +51,6 @@ body {
 
 }
 .search-bar span{
-  /* justify-self: flex-start; */
   margin-right: 350px;
 }
 
@@ -75,7 +74,6 @@ body {
   display: flex;
   justify-self: center;
   align-items: center; 
-  /* justify-content: space-between; */
   gap: 40px;
   list-style: none;
   border:0;
@@ -110,7 +108,6 @@ body {
 .header-details {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   border-bottom: 1px solid #e7e6e5;
   padding-bottom: 16px;
 }
@@ -123,14 +120,12 @@ body {
 
 .language-preference {
   display: flex;
-  /* flex-direction: column; */
   gap: 4px;
   margin-top: 20px;
 
 }
 
 .language-label {
-  /* font-size: 14px; */
   font-weight: bolder;
   place-self: flex-end;
 
@@ -140,9 +135,7 @@ body {
   
   color: #007c89;
     margin-left: 10px;
-    /* appearance: none; */
     border: none;
-    /* background: transparent; */
     color: #007c89;
     font-size: 16px;
     font-weight: bold;
@@ -195,7 +188,6 @@ body {
   font-size: 16px;
 }
 
-/* Pagination */
 .pagination-controls {
   display: flex;
   justify-content: flex-end;
@@ -388,9 +380,6 @@ font-size: 22px;
     flex-direction: column;
     gap: 8px;
   }
-
-  
-
   
 }
 
