@@ -1,6 +1,6 @@
 const dogYearOfBirth= 2023;
 const yearFuture = 2045;
-let dogYearCoeff = 7;
+const dogYearCoeff = 7;
 
 const dogYearFutureInHumanYears = yearFuture - dogYearOfBirth;
 

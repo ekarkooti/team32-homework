@@ -18,7 +18,6 @@ function comparePrice(width, depth, height, gardenSize, houseCost, name) {
       `${name} is paying too little!!! ${houseCost} instead of ${housePrice}`
     );
   }
-  return 1;
 }
 
 // peters house
