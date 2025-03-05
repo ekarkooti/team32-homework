@@ -24,7 +24,7 @@ function getReply(command) {
     }
   } else if (command.startsWith("add") && command.endsWith("to my todo")) {
     let todo = commandSplit.slice(1, -3).join(" ");
-    currentPerson.todo.push(todo);
+    currentPerson.todoList.push(todo);
     return `${todo} added to your todo`;
   } else if (command === "what is on my todo?") {
     return currentPerson.todo;
