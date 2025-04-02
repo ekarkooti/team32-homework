@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Recepies app</title>
+  </head>
+  <body>
+    <div class="left-panel">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#" class="add-recipe-link"
+              ><i class="fas fa-plus"> Add Recipe</i></a
+            >
+          </li>
+          <li><a href="#">Favorits</a></li>
+          <li><a href="#">Categoris</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <section id="recepies" class="section">
+        <div id="recipes-grid"></div>
+      </section>
+
+      <section id="recipe-form-container" style="display: none">
+        <form id="recipe-form">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" /><br /><br />
+
+          <label for="picture_url">Picture URL:</label>
+          <input type="text" id="picture_url" name="picture_url" /><br /><br />
+
+          <label for="description">Description:</label>
+          <textarea id="description" name="description"></textarea><br /><br />
+
+          <div id="ingredients-list">
+            <p id="add-ingredient-icon" >
+              + Add Ingredient
+            </p>
+            <ul id="ingredient-items"></ul>
+          </div>
+          <br /><br />
+
+          <button type="submit">Submit Recipe</button>
+          <button type="button" id="cancel-form">Cancel</button>
+        </form>
+      </section>
+    </div>
+
+    <div id="recipe-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <div id="popup-recipe-details"></div>
+      </div>
+    </div>
+
+    <div id="ingredient-popup" class="popup">
+      <div class="ingredients-popup">
+        <span id="close-popup" class="close-popup">&times;</span>
+        <form id="ingredient-form">
+          <label for="ingredient-name">Name:</label>
+          <input type="text" id="ingredient-name" name="name" />
+
+          <label for="ingredient-amount">Amount:</label>
+          <input type="text" id="ingredient-amount" name="amount" />
+          <label for="ingredient-unit">Unit:</label>
+          <input type="text" id="ingredient-unit" name="unit" />
+          <div class="button-container">
+          <button type="button" id="submit-ingredient" >Add</button>
+          <button type="button" id="cancel-addIngredient" >Cancel</button>
+        </div>
+          
+        </form>
+      </div>
+    </div>
+    <script src="recipes.js"></script>
+    <script src="recipeApp.js"></script>
+  </body>
+</html>
