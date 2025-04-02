@@ -1,0 +1,239 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #e0f2f1;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.left-panel {
+    width: 13%;
+    background: #06205D;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    padding: 10px;
+}
+
+#recipe-search {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.select-container {
+    padding: 10px;
+}
+
+.select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.left-panel nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.left-panel nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+}
+
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.recipe-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    padding-bottom: 100%;
+}
+
+.recipe-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.recipe-item:hover .overlay {
+    opacity: 1;
+}
+
+.recipe-item.hovered img {
+    transform: scale(1.1);
+}
+
+.recipe-item .overlay i {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 350px;
+    position: relative;
+    overflow-y: auto;
+
+}
+
+.popup h2,
+.popup img {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.popup img {
+    width: 300%;
+    height: 200%;
+}
+
+.close-popup {
+    color: #aaa;
+    position: absolute;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    border: 1px solid #888;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-height: 80vh;
+    overflow: auto;
+}
+
+#recipe-form {
+    overflow-y: auto;
+
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+
+#recipe-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#recipe-form input,
+#recipe-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.ingredients input {
+    margin-right: 10px;
+}
+
+
+#recepies.hidden {
+    display: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
