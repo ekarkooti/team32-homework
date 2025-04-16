@@ -1,0 +1,508 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #e0f2f1;
+    color: #333;
+    box-sizing: border-box;
+    background-image: url('./pics/background4.jpg');
+    background-repeat: repeat;
+    background-size: 100% 100%;
+    background-attachment: scroll;
+}
+
+
+.top-panel {
+    width: 100%;
+    height: 15%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 10px;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 8px rgba(32, 75, 16, 0.2);
+}
+
+.search-container {
+    flex: 1;
+    max-width: 300px;
+}
+
+#recipe-search {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.select-container {
+    display: flex;
+    align-items: center;
+}
+
+.select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.add-recipe-link {
+    background: #28a745;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.add-recipe-link:hover {
+    background: #218838;
+}
+
+@media (max-width: 768px) {
+    .top-panel {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-container {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 5px;
+    }
+}
+
+#messageFilter {
+    margin-left: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+#messageSort {
+    margin-left: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+#timer {
+
+    color: white;
+    font-weight: 700;
+    font-size: medium;
+}
+
+#startTimer {
+    position: fixed;
+    top: 3vh;
+    right: 16.5vw;
+    color: white;
+    font-weight: 700;
+    font-size: medium;
+}
+
+#cookingTimerDisplay {
+
+    position: fixed;
+    top: 3vh;
+    right: 4.2vw;
+    color: white;
+    font-weight: 700;
+    font-size: medium;
+}
+
+.main-content {
+    overflow-y: auto;
+}
+
+
+
+.section {
+    padding: 20px;
+    padding-top: 0px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+
+}
+
+.popup-content {
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 350px;
+    position: relative;
+    overflow-y: auto;
+    background-color: rgb(242, 250, 244);
+
+}
+
+.popup h2 {
+
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    color: rgb(23, 75, 23);
+    padding-bottom: 10px;
+
+}
+
+
+.popup img {
+
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border: solid;
+    border-color: #cbddcf;
+
+}
+
+.close-popup {
+    color: #aaa;
+    position: absolute;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.price-append {
+    margin-left: 40px;
+    text-align: center;
+}
+
+.popup2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    border: 1px solid #888;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-height: 80vh;
+    overflow: auto;
+}
+
+#recipe-form {
+    overflow-y: auto;
+
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+
+#recipe-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#recipe-form input,
+#recipe-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.ingredients input {
+    margin-right: 10px;
+}
+
+
+#recepies.hidden {
+    display: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+#recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.recipe-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.recipe-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.recipe-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.recipe-meta {
+    font-size: 16px;
+    color: #666;
+    padding: 5px;
+}
+
+.recipe-meta i {
+    margin-right: 5px;
+}
+
+.overlay1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+    gap: 10px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.overlay1 i {
+    background: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.overlay1 i:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+    transition: 0.3s;
+}
+
+.close-popup:hover {
+    color: red;
+}
+
+#popup-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#popup-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+#popup-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#popup-ingredients {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+#popup-ingredients li {
+    background: #f8f8f8;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #444;
+}
+
+#cookingTimerDisplay {
+    font-size: 16px;
+    color: #007BFF;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#ingredients-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#ingredients-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+#ingredients-table td:first-child {
+    text-align: left;
+}
+
+.ingredient-price {
+    display: none;
+}
+
+#showPricesButton {
+    margin-top: 2px;
+    padding: 8px 12px;
+    background-color: #1c421c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#showPricesButton:hover {
+    background-color: #34814a;
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #popup-title {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

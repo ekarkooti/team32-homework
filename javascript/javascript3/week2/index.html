@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Recepies app</title>
+  </head>
+  <body>
+    
+
+    <div class="top-panel">
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" id="home">Home</a></li>
+          <li>
+            <a href="#" class="add-recipe-link">
+              <i class="fas fa-plus"></i> Add Recipe
+            </a>
+          </li>
+          <li>
+            <div class="select-container">
+              <select class="select select-categories">
+                <option value="">Categories</option>
+                <option value="italian">Italian</option>
+                <option value="indian">Indian</option>
+                <option value="persian">Persian</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="select-container">
+              <select class="select select-sort">
+                <option value="default">Sort By</option>
+                <option value="title">Title (A-Z)</option>
+                <option value="ingredients">Ingredients </option>
+              </select>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+      <div class="search-container">
+        <input type="text" id="recipe-search" placeholder="Search recipes...">
+      </div>
+      <div id="timer"> </div>
+    </div>
+        
+    <div >
+      <span id="messageFilter"> </span>
+      <span id="messageSort"> </span>
+    </div>    
+
+    <div class="background-overlay"></div>
+    <div class="main-content">
+      <section id="recepies" class="section">
+        <div id="recipes-grid"></div>
+      </section>
+    </div>
+
+   
+    <div id="recipe-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h2 id="popup-title"></h2>
+        <img id="popup-image" src="" alt="">
+        <div>
+          <i id="startTimer" class="fas fa-bell"> Set timer </i>
+          <span id="cookingTimerDisplay"></span>
+        </div>
+        <p id="popup-description"></p>
+        <ul id="popup-ingredients"></ul>
+        <button id="showPricesButton">Show Prices</button>
+      </div>
+    </div>
+
+    <div id="recipe-form-popup" class="popup2">
+      <span class="close-popup2" id="close-popup2">&times;</span>
+      <section id="recipe-form-container">
+        <form id="recipe-form">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required/><br /><br />
+          <label for="picture_url">Picture URL:</label>
+          <input type="text" id="picture_url" name="picture_url" /><br /><br />
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required ></textarea><br /><br />
+   
+          <div id="ingredients-list">
+            <p id="add-ingredient-icon" >
+              + Add Ingredient
+            </p>
+            
+            <div class="ingredients">
+              <input type="text" id="ingredient-name" name="name" placeholder="Name" required/>
+              <input type="text" id="ingredient-amount" name="amount" placeholder="Amount" required/>
+              <input type="text" id="ingredient-unit" name="unit" placeholder="Unit" required/>
+            </div>
+          </div>
+          <br /><br />
+          <button type="submit">Submit Recipe</button>
+          <button type="button" id="cancel-form">Cancel</button>
+        </form>
+      </section>
+    </div>
+    
+    <div id="overlay" class="overlay"></div>
+        </form>
+      </div>
+    </div>
+    <script src="recipeApp.js"></script>
+  </body>
+</html>
+
+
+
